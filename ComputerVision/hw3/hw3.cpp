@@ -49,7 +49,7 @@ void find_borders() {
 }
 
 // 4-connectivity connected component labeling for binary image
-// 2 pass mplememntation in O(rows * cols * connected_cpmponents)
+// 2 pass mplememntation in O(rows * cols * connected_components)
 void connected_components(int background) {
 	Mat image = imread("connected_components.jpg", IMREAD_GRAYSCALE);
 	if (image.empty()) {
@@ -150,8 +150,8 @@ void groupped_and_alone_circles() {
 	// Find groups of circles
 	int erosion_type = MORPH_ELLIPSE, erosion_size = 8;
 	Mat element = getStructuringElement(erosion_type,
-								    	Size(2 * erosion_size + 1, 2 * erosion_size + 1),
-										Point(erosion_size, erosion_size));
+	                                    Size(2 * erosion_size + 1, 2 * erosion_size + 1),
+	                                    Point(erosion_size, erosion_size));
 	morphologyEx(image, groupped, MORPH_OPEN, element);
 	threshold(groupped, groupped, 30.0, 255.0, THRESH_BINARY);
 	imwrite("circles_groupped.jpg", groupped);
@@ -388,7 +388,7 @@ void detect_and_group_two() {
 	waitKey(0);
 }
 
-void detect_and_group_one() {
+void detect_and_group_three() {
 	Mat image = imread("coins_noize_3.jpg", IMREAD_COLOR);
 	if (image.empty()) {
 		return;
