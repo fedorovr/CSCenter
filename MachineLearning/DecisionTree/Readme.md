@@ -1,0 +1,2 @@
+This script shows simple implementation of a decision tree for classification with selection of max depth, min leaf size, important features and optimal features count.
+Tree uses Gini impurity metrics to split, and auc on cross-validation to choose the best model.
