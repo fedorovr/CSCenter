@@ -1,0 +1,1 @@
+This script shows simple implementation of a linear regresion with selection of features with forward selection.
